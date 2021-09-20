@@ -1,15 +1,15 @@
 .Button{
-    background-color: #157347;
-    border-color: #146c43;
-    border-radius: 75%;
+    background-color: green;
+    border-color: green;
     padding: 10px 5px;
     font-size: 1rem;
     border-radius: .25rem;
     color: white;
     cursor: pointer;
-    box-shadow: 2px 2px 2px lightgreen;
 }
 
 .Button:hover {
-    box-shadow: 2px 2px 2px darkgreen;
+    background-color: darkgreen;
+    border-color: darkgreen;
+    box-shadow: 2px 2px 2px grey;
 }

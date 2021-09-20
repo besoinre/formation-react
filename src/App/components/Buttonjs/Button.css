@@ -1,0 +1,21 @@
+.Button{
+    background-color: green;
+    padding: 10px 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: .25rem;
+    border: none;
+    color: white;
+    cursor: pointer;
+    margin: 10px;
+    box-shadow: 10px 10px 20px grey;
+}
+
+.Button:hover {
+    box-shadow: 10px 10px 10px grey;
+}
+
+.clicked {
+
+    box-shadow: 5px 5px 7px grey !important;
+}

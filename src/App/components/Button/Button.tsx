@@ -1,7 +1,12 @@
 import React from 'react';
 import './Button.css';
 
-function Button(props) {
+interface ButtonProps{
+    children?:[any]|{};
+    text?:string;
+}
+
+function Button(props:ButtonProps) {
     console.log(props);
     return <button className="Button">{props.children ? props.children : props.text}</button>
 }
