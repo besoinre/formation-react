@@ -52,32 +52,8 @@ class App extends React.Component{
 
     render() {
         return (
-            <>
                 <div className={styles.App}>
-                    <ThumbnailLayout>
-                        {
-                            this.state.memes.map((e, i) => {
-                                return (
-                                    <MemeViewer key={`meme-${i}`} meme={
-                                        {
-                                            ...e,
-                                            image: this.state.images
-                                                .find( ef => ef.id === e.imageId)
-
-                                        }
-                                    } />
-                                );
-                            })
-                        }
-                    </ThumbnailLayout>
                 </div>
-                <div>
-                    <h2>
-                        State :
-                    </h2>
-                    {JSON.stringify(this.state)}
-                </div>
-            </>
         )
     }
 }
