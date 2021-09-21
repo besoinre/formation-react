@@ -9,6 +9,7 @@ interface MemeViewerProps {
             h: number,
             w: number
         },
+        imageId: number,
         x: number,
         y: number,
         text: string,
@@ -25,13 +26,17 @@ interface MemeViewerProps {
 
 const MemeViewer = (props) => {
     return (
-        <svg className={styles.MemeViewer} data-testid="MemeViewer" viewBox={`0 0 ${props.meme.image.w} ${props.meme.image.h}`}>
+        <svg className={styles.MemeViewer}
+             data-testid="MemeViewer"
+             viewBox={`0 0 ${props.meme.image.w} ${props.meme.image.h}`}>
             <image href={props.meme.image.url}/>
             <text
                 x={props.meme.x}
                 y={props.meme.y}
                 style={props.meme.style}
-            >{props.meme.text}</text>
+            >
+                {props.meme.text}
+            </text>
         </svg>
     );
 }

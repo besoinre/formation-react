@@ -35,6 +35,18 @@
         "test": "templatesGRC/hookFunction/TemplateName.test.js"
       }
     },
+    "layout": {
+      "path": "src/App/components/layout",
+      "withStyle": true,
+      "withTest": true,
+      "withStory": false,
+      "withLazy": false,
+      "customTemplate": {
+        "component": "templatesGRC/hookFunction/TemplateName.js",
+        "style": "templatesGRC/hookFunction/TemplateName.module.scss",
+        "test": "templatesGRC/hookFunction/TemplateName.test.js"
+      }
+    },
     "ui": {
       "path": "src/App/components/ui",
       "withStyle": true,
@@ -54,7 +66,7 @@
       "withStory": false,
       "withLazy": false,
       "customTemplate": {
-        "component": "templatesGRC/reducer/TemplateName.js",
+        "component": "templatesGRC/reducer/TemplateName.js"
       }
     }
   }
