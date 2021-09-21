@@ -1,11 +1,11 @@
 import React, {useState} from 'react';
-import './Button.css';
+import styles from './Button.module.css';
 import PropTypes from 'prop-types';
 
 function Button(props) {
     const [clicked, setClicked] = useState(false);
     return <button
-                className={clicked ? "Button clicked" : "Button"}
+                className={clicked ? `${styles.Button} ${styles.clicked}`: styles.Button}
                 onClick={() => {
                         setClicked(true);
                         props.onLeftClick();
