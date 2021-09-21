@@ -2,40 +2,10 @@ import React from 'react';
 import styles from './App.module.scss'
 import ThumbnailLayout from "./components/layout/ThumbnailLayout/ThumbnailLayout";
 import MemeViewer from "./components/MemeViewer/MemeViewer";
+import {REST_ADR, RESOURCES} from "./config/config";
 
 const initialState = {
-    memes: [
-        {
-            id: 0,
-            imageId: 0,
-            x: 50,
-            y: 300,
-            text: "Mon premier meme",
-            name: "Meme name",
-            style: {
-                fontSize: 30,
-                fill: "tomato",
-                textDecoration: "normal",
-                fontStyle: "normal",
-                fontWeight: 800
-            }
-        },
-        {
-            id: 1,
-            imageId: 1,
-            x: 50,
-            y: 300,
-            text: "Mon Second meme",
-            name: "Formation react",
-            style: {
-                fontSize: 50,
-                fill: "white",
-                textDecoration: "underline",
-                fontStyle: "normal",
-                fontWeight: 500
-            }
-        }
-    ],
+    memes: [],
     current:
         {
             imageId: 0,
@@ -51,20 +21,7 @@ const initialState = {
                 fontWeight: 500
             }
         },
-    images: [
-        {
-            id: 0,
-            url: "/img/memes/oldman.jpg",
-            h: 900,
-            w: 600,
-        },
-        {
-            id: 1,
-            url: "/img/memes/jump.jpg",
-            h: 900,
-            w: 600,
-        }
-    ]
+    images: []
 };
 
 class App extends React.Component{
@@ -74,26 +31,53 @@ class App extends React.Component{
         this.state = initialState;
     }
 
+    componentDidMount() {
+        const promise1 = fetch(`${REST_ADR}${RESOURCES.memes}`)
+            .then(f => {
+                return f.json()
+            });
+        const promise2 = fetch(`${REST_ADR}${RESOURCES.images}`)
+            .then(f => f.json());
+
+        Promise.all([promise1, promise2]).then(fs => {
+            console.log(fs);
+            this.setState({
+                memes: fs[0],
+                images: fs[1]
+            })
+        });
+
+
+    }
+
     render() {
         return (
-            <div className={styles.App}>
-                <ThumbnailLayout>
-                    {
-                        this.state.memes.map((e, i) => {
-                            return (
-                                <MemeViewer key={`meme-${i}`} meme={
-                                    {
-                                        ...e,
-                                        image: this.state.images
-                                            .find( ef => ef.id === e.imageId)
+            <>
+                <div className={styles.App}>
+                    <ThumbnailLayout>
+                        {
+                            this.state.memes.map((e, i) => {
+                                return (
+                                    <MemeViewer key={`meme-${i}`} meme={
+                                        {
+                                            ...e,
+                                            image: this.state.images
+                                                .find( ef => ef.id === e.imageId)
 
-                                    }
-                                } />
-                            );
-                        })
-                    }
-                </ThumbnailLayout>
-            </div>
+                                        }
+                                    } />
+                                );
+                            })
+                        }
+                    </ThumbnailLayout>
+                </div>
+                <div>
+                    <h2>
+                        State :
+                    </h2>
+                    {JSON.stringify(this.state)}
+                </div>
+            </>
         )
     }
 }

@@ -1,0 +1,48 @@
+{
+  "memes": [
+    {
+      "id": 0,
+      "imageId": 0,
+      "x": 50,
+      "y": 300,
+      "text": "Mon premier meme",
+      "name": "Meme name",
+      "style": {
+        "fontSize": 30,
+        "fill": "tomato",
+        "textDecoration": "normal",
+        "fontStyle": "normal",
+        "fontWeight": 800
+      }
+    },
+    {
+      "id": 1,
+      "imageId": 1,
+      "x": 50,
+      "y": 300,
+      "text": "Mon Second meme",
+      "name": "Formation react",
+      "style": {
+        "fontSize": 50,
+        "fill": "white",
+        "textDecoration": "underline",
+        "fontStyle": "normal",
+        "fontWeight": 500
+      }
+    }
+  ],
+  "images": [
+    {
+      "id": 0,
+      "url": "/img/memes/oldman.jpg",
+      "h": 900,
+      "w": 600
+    },
+    {
+      "id": 1,
+      "url": "/img/memes/jump.jpg",
+      "h": 900,
+      "w": 600
+    }
+  ]
+}
