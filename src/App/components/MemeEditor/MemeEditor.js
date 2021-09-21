@@ -26,7 +26,7 @@ const MemeEditor = (props) => {
                 }}>
                     {props.images.map( (e,i) => {
                         return (
-                            <option value={e.id} selected={Number(e.id) === Number(props.meme.imageId)}>
+                            <option key={`key-${i}`} value={e.id} selected={Number(e.id) === Number(props.meme.imageId)}>
                                 {e.url}
                             </option>
                         )

@@ -6,6 +6,8 @@ import {REST_ADR, RESOURCES} from "./config/config";
 import FlexLayout from "./components/layout/FlexLayout/FlexLayout";
 import MemeEditor from "./components/MemeEditor/MemeEditor";
 
+import {store} from './store/store'
+
 const initialState = {
     memes: [],
     current:
