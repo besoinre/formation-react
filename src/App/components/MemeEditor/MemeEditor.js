@@ -1,32 +1,52 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import PropTypes from 'prop-types';
 import styles from './MemeEditor.module.scss';
 import Button from "../Buttonjs/Button";
 
-const memeEditorInitialState = {};
+import {CURRENT_MEME_ACTIONS, currentInitialState, memeInitialState, store} from '../../store/store';
 
 const MemeEditor = (props) => {
 
-    const [state, setState] = useState(memeEditorInitialState);
+    const [images, setImages] = useState(memeInitialState.images);
+    const [current, setCurrent] = useState(currentInitialState);
+
+    // ComponentDidMount/ComponentDidUpdate
+    // Return ComponentDidUnmount
+    useEffect( () => {
+        // Si le changement a eu lieu avant l'abonnement
+        setImages(store.getState().lists.images);
+        setCurrent(store.getState().current);
+        store.subscribe(() => {
+            setImages(store.getState().lists.images);
+            //Pas d'abonnement car les changements au current sont aussi faits en local Et c'est le seul endroit où current est modifié
+        });
+    }, []);
+
+    useEffect( () => {
+       store.dispatch({type: CURRENT_MEME_ACTIONS.UPDT_CURRENT, value: current})
+    }, [current]);
 
     return (
         <div className={styles.MemeEditor} data-testid="MemeEditor">
-            <form>
+            <form onSubmit={(evt) => {
+                evt.preventDefault();
+                store.dispatch({type: CURRENT_MEME_ACTIONS.SAVE_CURRENT})
+            }}>
                 <label>Meme name </label>
-                <input type="text" id="name" value={props.meme.name}
+                <input type="text" id="name" value={current.name}
                        onChange={(evt) => {
-                           props.onFormChange({...props.meme, name: evt.target.value})
+                           setCurrent({...current, name: evt.target.value});
                        }}
                 />
                 <br />
                 <br />
                 <label>Image </label>
                 <select onChange={(evt) => {
-                    props.onFormChange({...props.meme, imageId: Number(evt.target.value)})
+                    setCurrent({...current, imageId: Number(evt.target.value)})
                 }}>
-                    {props.images.map( (e,i) => {
+                    {images.map( (e,i) => {
                         return (
-                            <option key={`key-${i}`} value={e.id} selected={Number(e.id) === Number(props.meme.imageId)}>
+                            <option key={`key-${i}`} value={e.id} selected={Number(e.id) === Number(current.imageId)}>
                                 {e.url}
                             </option>
                         )
@@ -35,37 +55,36 @@ const MemeEditor = (props) => {
                 <br />
                 <br />
                 <label>Text </label>
-                <input type="text" placeholder="texte du meme" value={props.meme.text}
+                <input type="text" placeholder="texte du meme" value={current.text}
                        onChange={(evt) => {
-                           props.onFormChange({...props.meme, text: evt.target.value})
+                           setCurrent({...current, text: evt.target.value})
                        }}
                 />
                 <br />
                 <br />
                 <label>Position </label>
                 <label htmlFor={"x"}> X : </label>
-                <input type={"text"} value={props.meme.x}
+                <input type={"text"} value={current.x}
                        onChange={(evt) => {
-                           props.onFormChange({...props.meme, x: evt.target.value})
+                           setCurrent({...current, x: Number(evt.target.value)})
                        }}
                 />
                 <br />
                 <br />
                 <label htmlFor={"y"}> Y : </label>
-                <input type={"text"} value={props.meme.y}
+                <input type={"text"} value={current.y}
                        onChange={(evt) => {
-                           props.onFormChange({...props.meme, y: evt.target.value})
+                           setCurrent({...current, y: Number(evt.target.value)})
                        }}
                 />
                 <br />
                 <br />
                 <label htmlFor={"color"}> Color : </label>
-                <input type={"color"} value={props.meme.style.fill}
+                <input type={"color"} value={current.style ? current.style.fill : "#000"}
                        onChange={(evt) => {
-                           props.onFormChange(
-                               {...props.meme,
+                           setCurrent({...current,
                                    style:{
-                                       ...props.meme.style,
+                                       ...current.style,
                                        fill: evt.target.value
                                    }
                                }
@@ -75,12 +94,11 @@ const MemeEditor = (props) => {
                 <br />
                 <br />
                 <label htmlFor={"textDecoration"}> Text Decoration : </label>
-                <input type={"checkbox"} checked={props.meme.style.textDecoration === "underline"}
+                <input type={"checkbox"} checked={current.style ? current.style.textDecoration === "underline" : false}
                        onChange={(evt) => {
-                           props.onFormChange(
-                               {...props.meme,
+                           setCurrent({...current,
                                    style:{
-                                       ...props.meme.style,
+                                       ...current.style,
                                        textDecoration: (evt.target.checked ? "underline" : "none")
                                    }
                                }
@@ -90,12 +108,11 @@ const MemeEditor = (props) => {
                 <br />
                 <br />
                 <label htmlFor={"fontStyle"}> Font Style : </label>
-                <input type={"checkbox"} checked={props.meme.style.fontStyle === "italic"}
+                <input type={"checkbox"} checked={current.style ? current.style.fontStyle === "italic" : false}
                        onChange={(evt) => {
-                           props.onFormChange(
-                               {...props.meme,
+                           setCurrent({...current,
                                    style:{
-                                       ...props.meme.style,
+                                       ...current.style,
                                        fontStyle: (evt.target.checked ? "italic" : "normal")
                                    }
                                }
@@ -105,13 +122,12 @@ const MemeEditor = (props) => {
                 <br />
                 <br />
                 <label htmlFor={"fontSize"}> Font Size : </label>
-                <input type={"number"} value={props.meme.style.fontSize}
+                <input type={"number"} value={current.style ? current.style.fontSize : 10}
                        onChange={(evt) => {
                            console.log(evt.target.value);
-                           props.onFormChange(
-                               {...props.meme,
+                           setCurrent({...current,
                                    style:{
-                                       ...props.meme.style,
+                                       ...current.style,
                                        fontSize: Number(evt.target.value)
                                    }
                                }
@@ -121,13 +137,12 @@ const MemeEditor = (props) => {
                 <br />
                 <br />
                 <label htmlFor={"fontWeight"}> Font Weight : </label>
-                <input type={"number"} value={props.meme.style.fontWeight}
+                <input type={"number"} value={current.style ? current.style.fontWeight : 100}
                        onChange={(evt) => {
                            console.log(evt.target.value);
-                           props.onFormChange(
-                               {...props.meme,
+                           setCurrent({...current,
                                    style:{
-                                       ...props.meme.style,
+                                       ...current.style,
                                        fontWeight: Number(evt.target.value)
                                    }
                                }
@@ -141,15 +156,5 @@ const MemeEditor = (props) => {
         </div>
     )
 }
-
-
-
-
-MemeEditor.propTypes = {
-    meme: PropTypes.object.isRequired,
-    onFormChange: PropTypes.func.isRequired
-};
-
-MemeEditor.defaultProps = {};
 
 export default MemeEditor;
