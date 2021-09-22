@@ -1,0 +1,7 @@
+https://github.com/arminbro/generate-react-cli
+
+https://github.com/typicode/json-server
+
+https://github.com/zalmoxisus/redux-devtools-extension
+
+https://reactrouter.com/web/example/url-params
