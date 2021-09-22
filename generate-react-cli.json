@@ -68,6 +68,18 @@
       "customTemplate": {
         "component": "templatesGRC/reducer/TemplateName.js"
       }
+    },
+    "page": {
+      "path": "src/App/components/pages",
+      "withStyle": true,
+      "withTest": true,
+      "withStory": false,
+      "withLazy": false,
+      "customTemplate": {
+        "component": "templatesGRC/hookFunction/TemplateName.js",
+        "style": "templatesGRC/hookFunction/TemplateName.module.scss",
+        "test": "templatesGRC/hookFunction/TemplateName.test.js"
+      }
     }
   }
 }
