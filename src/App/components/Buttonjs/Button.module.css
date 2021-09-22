@@ -1,7 +1,7 @@
 .Button{
     background-color: green;
-    padding: 10px 5px;
-    font-size: 1rem;
+    padding: 20px 15px;
+    font-size: 2rem;
     font-weight: bold;
     border-radius: .25rem;
     border: none;
@@ -16,6 +16,5 @@
 }
 
 .clicked {
-
     box-shadow: 5px 5px 7px grey !important;
 }

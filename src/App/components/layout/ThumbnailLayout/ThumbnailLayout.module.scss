@@ -1,10 +1,4 @@
 .ThumbnailLayout {
   display: flex;
-  width: 100%;
-  height: 100%;
-}
-
-.ThumbnailLayout>svg {
-  flex: 1;
-
+  flex-wrap: wrap;
 }

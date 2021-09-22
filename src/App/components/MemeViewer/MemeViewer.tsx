@@ -1,28 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import styles from './MemeViewer.module.scss';
-
-interface MemeViewerProps {
-    meme: {
-        image:{
-            url: string,
-            h: number,
-            w: number
-        },
-        imageId: number,
-        x: number,
-        y: number,
-        text: string,
-        name: string,
-        style: {
-            fontSize: number,
-            fill: string,
-            textDecoration: string,
-            fontStyle: string,
-            fontWeight: number
-        }
-    };
-}
 
 const MemeViewer = (props) => {
 

@@ -1,37 +1,36 @@
 {
   "memes": [
     {
-      "id": 0,
       "imageId": 0,
       "x": 50,
       "y": 300,
-      "text": "Mon premier meme",
+      "text": "VVV",
       "name": "Meme name",
       "style": {
         "fontSize": 30,
-        "fill": "tomato",
+        "fill": "#000000",
         "textDecoration": "normal",
         "fontStyle": "normal",
         "fontWeight": 800
-      }
+      },
+      "id": 0
     },
     {
-      "id": 1,
       "imageId": 1,
-      "x": 50,
-      "y": 300,
-      "text": "Mon Second meme",
-      "name": "Formation react",
+      "x": 20,
+      "y": 275,
+      "text": "Mon Deuxieme meme",
+      "name": "AAAAAAAAAAA",
       "style": {
         "fontSize": 50,
-        "fill": "white",
+        "fill": "#d1ec80",
         "textDecoration": "underline",
         "fontStyle": "normal",
         "fontWeight": 500
-      }
+      },
+      "id": 1
     },
     {
-      "id": 2,
       "imageId": 1,
       "x": 50,
       "y": 300,
@@ -39,24 +38,220 @@
       "name": "Formation react",
       "style": {
         "fontSize": 50,
-        "fill": "white",
+        "fill": "#fb2429",
         "textDecoration": "underline",
         "fontStyle": "normal",
         "fontWeight": 500
-      }
+      },
+      "id": 2
+    },
+    {
+      "imageId": 0,
+      "x": 0,
+      "y": 100,
+      "text": "Mister MEME",
+      "name": "",
+      "style": {
+        "fontSize": 75,
+        "fill": "#ff0080",
+        "textDecoration": "none",
+        "fontStyle": "normal",
+        "fontWeight": 400
+      },
+      "id": 3
+    },
+    {
+      "imageId": 0,
+      "x": 85,
+      "y": 160,
+      "text": "Voila un gros meme",
+      "name": "",
+      "style": {
+        "fontSize": 30,
+        "fill": "#000000",
+        "textDecoration": "underline",
+        "fontStyle": "normal",
+        "fontWeight": 400
+      },
+      "id": 4
+    },
+    {
+      "imageId": 0,
+      "x": 170,
+      "y": 135,
+      "text": "HAHAHAHAH",
+      "name": "",
+      "style": {
+        "fontSize": 30,
+        "fill": "#f00000",
+        "textDecoration": "none",
+        "fontStyle": "normal",
+        "fontWeight": 400
+      },
+      "id": 5
+    },
+    {
+      "imageId": 0,
+      "x": 50,
+      "y": 300,
+      "text": "Mon premier meme",
+      "name": "Meme name",
+      "style": {
+        "fontSize": 30,
+        "fill": "#000000",
+        "textDecoration": "normal",
+        "fontStyle": "normal",
+        "fontWeight": 800
+      },
+      "id": 6
+    },
+    {
+      "imageId": 1,
+      "x": 50,
+      "y": 300,
+      "text": "Mon premier meme",
+      "name": "La c'est le titre",
+      "style": {
+        "fontSize": 30,
+        "fill": "#000000",
+        "textDecoration": "normal",
+        "fontStyle": "normal",
+        "fontWeight": 800
+      },
+      "id": 7
+    },
+    {
+      "imageId": 0,
+      "x": 50,
+      "y": 300,
+      "text": "Mon premier meme",
+      "name": "le titre",
+      "style": {
+        "fontSize": 30,
+        "fill": "#000000",
+        "textDecoration": "normal",
+        "fontStyle": "normal",
+        "fontWeight": 800
+      },
+      "id": 8
+    },
+    {
+      "imageId": 0,
+      "x": 50,
+      "y": 300,
+      "text": "Mon premier meme",
+      "name": "Mon titre",
+      "style": {
+        "fontSize": 30,
+        "fill": "#54d8ce",
+        "textDecoration": "normal",
+        "fontStyle": "normal",
+        "fontWeight": 800
+      },
+      "id": 9
+    },
+    {
+      "imageId": 0,
+      "x": 50,
+      "y": 300,
+      "text": "Mon premier meme",
+      "name": "Meme name",
+      "style": {
+        "fontSize": 30,
+        "fill": "#120ea9",
+        "textDecoration": "normal",
+        "fontStyle": "normal",
+        "fontWeight": 800
+      },
+      "id": 10
+    },
+    {
+      "imageId": 0,
+      "x": 0,
+      "y": 100,
+      "text": "",
+      "name": "AAAAA",
+      "style": {
+        "fontSize": 30,
+        "fill": "#000",
+        "textDecoration": "none",
+        "fontStyle": "normal",
+        "fontWeight": 400
+      },
+      "id": 11
+    },
+    {
+      "imageId": 0,
+      "x": 50,
+      "y": 300,
+      "text": "Mon premier meme",
+      "name": "Title",
+      "style": {
+        "fontSize": 30,
+        "fill": "#000000",
+        "textDecoration": "normal",
+        "fontStyle": "normal",
+        "fontWeight": 800
+      },
+      "id": 12
+    },
+    {
+      "imageId": 0,
+      "x": 50,
+      "y": 300,
+      "text": "Mon premier meme",
+      "name": "Title",
+      "style": {
+        "fontSize": 30,
+        "fill": "#000000",
+        "textDecoration": "normal",
+        "fontStyle": "normal",
+        "fontWeight": 800
+      },
+      "id": 13
+    },
+    {
+      "imageId": 0,
+      "x": 50,
+      "y": 300,
+      "text": "EEEEE",
+      "name": "Meme name",
+      "style": {
+        "fontSize": 30,
+        "fill": "#000000",
+        "textDecoration": "normal",
+        "fontStyle": "normal",
+        "fontWeight": 800
+      },
+      "id": 14
+    },
+    {
+      "imageId": 0,
+      "x": 50,
+      "y": 300,
+      "text": "A",
+      "name": "Meme name",
+      "style": {
+        "fontSize": 30,
+        "fill": "#000000",
+        "textDecoration": "normal",
+        "fontStyle": "normal",
+        "fontWeight": 800
+      },
+      "id": 15
     }
   ],
   "images": [
     {
       "id": 0,
       "url": "/img/memes/oldman.jpg",
-      "h": 900,
+      "h": 400,
       "w": 600
     },
     {
       "id": 1,
       "url": "/img/memes/jump.jpg",
-      "h": 900,
+      "h": 400,
       "w": 600
     }
   ]
