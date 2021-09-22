@@ -64,7 +64,7 @@ const MemeEditor = (props) => {
                 <br />
                 <label>Position </label>
                 <label htmlFor={"x"}> X : </label>
-                <input type={"text"} value={current.x}
+                <input type={"number"} value={current.x} step={5}
                        onChange={(evt) => {
                            setCurrent({...current, x: Number(evt.target.value)})
                        }}
@@ -72,7 +72,7 @@ const MemeEditor = (props) => {
                 <br />
                 <br />
                 <label htmlFor={"y"}> Y : </label>
-                <input type={"text"} value={current.y}
+                <input type={"number"} value={current.y} step={5}
                        onChange={(evt) => {
                            setCurrent({...current, y: Number(evt.target.value)})
                        }}
@@ -93,7 +93,7 @@ const MemeEditor = (props) => {
                 />
                 <br />
                 <br />
-                <label htmlFor={"textDecoration"}> Text Decoration : </label>
+                <label htmlFor={"textDecoration"}> Underline : </label>
                 <input type={"checkbox"} checked={current.style ? current.style.textDecoration === "underline" : false}
                        onChange={(evt) => {
                            setCurrent({...current,
@@ -107,7 +107,7 @@ const MemeEditor = (props) => {
                 />
                 <br />
                 <br />
-                <label htmlFor={"fontStyle"}> Font Style : </label>
+                <label htmlFor={"fontStyle"}> Italic : </label>
                 <input type={"checkbox"} checked={current.style ? current.style.fontStyle === "italic" : false}
                        onChange={(evt) => {
                            setCurrent({...current,
@@ -122,7 +122,7 @@ const MemeEditor = (props) => {
                 <br />
                 <br />
                 <label htmlFor={"fontSize"}> Font Size : </label>
-                <input type={"number"} value={current.style ? current.style.fontSize : 10}
+                <input type={"number"} value={current.style ? current.style.fontSize : 10} step={5}
                        onChange={(evt) => {
                            console.log(evt.target.value);
                            setCurrent({...current,
@@ -137,7 +137,7 @@ const MemeEditor = (props) => {
                 <br />
                 <br />
                 <label htmlFor={"fontWeight"}> Font Weight : </label>
-                <input type={"number"} value={current.style ? current.style.fontWeight : 100}
+                <input type={"number"} value={current.style ? current.style.fontWeight : 100} step={100} min={0} max={1000}
                        onChange={(evt) => {
                            console.log(evt.target.value);
                            setCurrent({...current,

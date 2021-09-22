@@ -96,7 +96,8 @@ const currentReducer = (state = currentInitialState, action) => {
         case CURRENT_MEME_ACTIONS.SAVE_CURRENT:
             fetch(`${REST_ADR}${RESOURCES.memes}${state.id ? '/' + state.id : ''}`, {
                 headers: {"Content-Type": "application/json"},
-                method: `${state.id ? 'PUT' : 'POST'}`
+                method: `${state.id ? 'PUT' : 'POST'}`,
+                body: JSON.stringify(state)
             }).then(f => {
                     store.dispatch({type: CURRENT_MEME_ACTIONS.CLEAR_CURRENT})
                 }, f => {}

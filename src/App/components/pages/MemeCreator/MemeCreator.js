@@ -4,14 +4,10 @@ import MemeEditor from "../../MemeEditor/MemeEditor";
 import FlexLayout from "../../layout/FlexLayout/FlexLayout";
 import {currentInitialState, memeInitialState, store} from "../../../store/store";
 
-const initialCurrent = currentInitialState;
-
-const initialImages = memeInitialState.images;
-
 const MemeCreator = () => {
 
-    const [current, setCurrent] = useState(initialCurrent);
-    const [images, setImages] = useState(initialImages);
+    const [current, setCurrent] = useState(currentInitialState);
+    const [images, setImages] = useState(memeInitialState.images);
 
     useEffect( () => {
         setCurrent( store.getState().current);
